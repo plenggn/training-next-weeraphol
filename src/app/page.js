@@ -1,103 +1,283 @@
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import Link from "next/link";
+import AboutUsSection from "../components/AboutUsSection";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+   <div class="font-kanit antialiased bg-gray-50 text-gray-900">
+    {/* <!-- Header Section --> */}
+    <Navbar />
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+          {/* <!-- Logo --> */}
+          <div class="flex items-center">
+            <div class="text-2xl font-bold text-gray-900">
+              <span class="text-blue-600">Your</span>Brand
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* <!-- Navigation --> */}
+          <nav class="hidden md:flex items-center space-x-8">
+            <Link
+              href="#"
+              class="text-gray-700 hover:text-blue-600 transition-colors duration-300">
+              หน้าแรก
+            </Link>
+
+            <Link
+              href="#"
+              class="text-gray-700 hover:text-blue-600 transition-colors duration-300">
+              บริการ
+             </Link>
+
+            <Link
+              href="/about-us"
+              class="text-gray-700 hover:text-blue-600 transition-colors duration-300"
+              >เกี่ยวกับเรา</Link>
+
+            <Link
+              href="#"
+              class="text-gray-700 hover:text-blue-600 transition-colors duration-300"
+              >ติดต่อ</Link>
+          </nav>
+
+          {/* <!-- CTA Button --> */}
+          <div class="hidden md:block">
+            <button
+              class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors duration-300"
+            >
+              เริ่มต้นใช้งาน
+            </button>
+          </div>
+
+          {/* <!-- Mobile Menu Button --> */}
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </div>
+    </header>
+
+    {/* <!-- Hero Section --> */}
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          {/* <!-- Hero Title --> */}
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            ยินดีต้อนรับสู่
+            <span class="text-blue-600">เว็บไซต์ของเรา</span>
+          </h1>
+
+          {/* <!-- Hero Subtitle --> */}
+          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+            เรามีบริการที่ครบครันและทีมงานมืออาชีพ
+            พร้อมให้บริการคุณด้วยความใส่ใจและคุณภาพสูงสุด
+          </p>
+
+          {/* <!-- Hero CTA Buttons --> */}
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2"
+            >
+              <span>เริ่มต้นเลย</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            <button
+              class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2"
+            >
+              <i class="fas fa-play"></i>
+              <span>ดูวิดีโอ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AboutUsSection />
+
+    {/* <!-- Values Section --> */}
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        {/* <!-- Section Title --> */}
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">ค่านิยมของเรา</h2>
+          <p class="text-xl text-gray-600">สิ่งที่เรายึดถือและปฏิบัติ</p>
+        </div>
+
+        {/* <!-- Values Grid --> */}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* <!-- Value 1 --> */}
+          <div
+            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-heart text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">ความใส่ใจ</h3>
+            <p class="text-gray-600 leading-relaxed">
+              เรามุ่งมั่นในการให้บริการด้วยความใส่ใจและเข้าใจความต้องการของลูกค้า
+            </p>
+          </div>
+
+          {/* <!-- Value 2 --> */}
+          <div
+            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-star text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">คุณภาพ</h3>
+            <p class="text-gray-600 leading-relaxed">
+              เรามุ่งมั่นในการส่งมอบผลงานที่มีคุณภาพสูงสุดและตรงตามความต้องการ
+            </p>
+          </div>
+
+          {/* <!-- Value 3 --> */}
+          <div
+            class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-lightbulb text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">นวัตกรรม</h3>
+            <p class="text-gray-600 leading-relaxed">
+              เราพัฒนาและปรับปรุงบริการอย่างต่อเนื่องด้วยเทคโนโลยีที่ทันสมัย
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* <!-- CTA Section --> */}
+    <section class="py-16 bg-blue-600 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">พร้อมเริ่มต้นแล้วหรือยัง?</h2>
+        <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
+          ติดต่อเราวันนี้เพื่อรับคำปรึกษาฟรี หรือสอบถามข้อมูลเพิ่มเติม
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-phone"></i>
+            <span>โทรเลย</span>
+          </button>
+          <button
+            class="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>ส่งอีเมล</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {/* <!-- Footer --> */}
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* <!-- Company Info --> */}
+          <div class="md:col-span-2">
+            <div class="text-2xl font-bold mb-4">
+              <span class="text-blue-400">Your</span>Brand
+            </div>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+              บริษัทที่ให้บริการครบครันด้วยทีมงานมืออาชีพ
+              พร้อมให้คำปรึกษาและบริการที่ดีที่สุด
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-facebook text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* <!-- Quick Links --> */}
+          <div>
+            <h3 class="text-lg font-semibold mb-4">ลิงก์ด่วน</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-300"
+                  >หน้าแรก</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-300"
+                  >บริการ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-300"
+                  >เกี่ยวกับเรา</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors duration-300"
+                  >ติดต่อ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          {/* <!-- Contact Info --> */}
+          <div>
+            <h3 class="text-lg font-semibold mb-4">ติดต่อเรา</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-phone"></i>
+                <span>02-123-4567</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-envelope"></i>
+                <span>info@yourbrand.com</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-map-marker-alt mt-1"></i>
+                <span>123 ถนนสุขุมวิท กรุงเทพฯ 10110</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* <!-- Copyright --> */}
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <p>&copy; 2024 YourBrand. สงวนลิขสิทธิ์ทั้งหมด</p>
+        </div>
+      </div>
+    </footer>
+  </div>
   );
 }
